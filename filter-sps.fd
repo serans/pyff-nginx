@@ -1,0 +1,20 @@
+### Filter SPs ###
+- load:
+  - http://metadata.aai.switch.ch/metadata.switchaai+sp.xml
+  - http://metadata.aai.switch.ch/entities/interfederation+sp
+### Select SPs (add some filter or it crashes...)
+- select: "!//md:EntityDescriptor[md:SPSSODescriptor]"
+### Remove ourselves and any entities we overwrite with static files
+- fork merge remove:
+  - select:
+    - https://api.oreilly.com/samlsp
+### Publish back to metadata directory
+- sign:
+    key: default.key
+    cert: default.crt
+- map:
+  - publish:
+      output: /tmp/pyff/downloads
+      urlencode_filenames: false
+      hash_link: true
+- stats

@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginxinc/nginx-unprivileged:stable
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          # Keep container unprivileged but avoid SCC conflicts
+          securityContext:
+            runAsNonRoot: true                  # OK with restricted SCC
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+          volumeMounts:
+            - name: nginx-conf
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+            # Writeable directory for the metadata, will be written to by jobs
+            - mountPath: /tmp/pyff
+              name: writeable-data
+            - name: nginx-cache
+              mountPath: /var/cache/nginx/
+      volumes:
+        - name: nginx-cache
+          emptyDir: {}
+        - name: writeable-data
+          persistentVolumeClaim:
+            claimName: cephfs-volume
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf
+            items:
+              - key: nginx.conf
+                path: nginx.conf

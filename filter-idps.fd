@@ -1,0 +1,17 @@
+### Filter IdPs ###
+- load:
+  - http://metadata.aai.switch.ch/metadata.switchaai+idp.xml
+  - http://metadata.aai.switch.ch/entities/interfederation+idp
+### Select only the Entities that assert Sirtfi Compliance
+- select:
+  - "!//md:EntityDescriptor[md:Extensions/mdattr:EntityAttributes/saml:Attribute/@Name='urn:oasis:names:tc:SAML:attribute:assurance-certification' and md:Extensions/mdattr:EntityAttributes/saml:Attribute/saml:AttributeValue='https://refeds.org/sirtfi']"
+### Publish back to metadata directory
+- sign:
+    key: default.key
+    cert: default.crt
+- map:
+  - publish:
+      output: /tmp/pyff/downloads
+      urlencode_filenames: false
+      hash_link: true
+- stats

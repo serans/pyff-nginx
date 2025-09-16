@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-conf
+data:
+  nginx.conf: |
+    events {}
+    pid /var/cache/nginx/nginx.pid;
+    http {
+      include       /etc/nginx/mime.types;
+      default_type  application/octet-stream;
+      sendfile      on;
+      access_log    off;
+
+      server {
+        listen 8080;
+        server_name _;
+
+        location ~ ^/entities/(.*)$ {
+          root /tmp/pyff/nginx-root;
+          try_files /$1.xml =404;
+        }
+
+        location = / { return 200 "pyff server running ok\n"; }
+      }
+    }

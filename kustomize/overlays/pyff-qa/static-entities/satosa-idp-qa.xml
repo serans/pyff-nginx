@@ -1,0 +1,48 @@
+<ns0:EntityDescriptor xmlns:ns0="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ns1="urn:mace:shibboleth:metadata:1.0" xmlns:ns2="urn:oasis:names:tc:SAML:metadata:ui" xmlns:ns3="http://www.w3.org/2000/09/xmldsig#" entityID="https://edugain-idp-qa.web.cern.ch/proxysamlfrontend">
+    <ns0:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" WantAuthnRequestsSigned="false">
+        <ns0:Extensions>
+            <ns1:Scope regexp="false">edugain-idp-qa.cern.ch</ns1:Scope>
+            <ns2:UIInfo>
+                <ns2:DisplayName xml:lang="en">CERN Identity Provider</ns2:DisplayName>
+                <ns2:Description xml:lang="en">CERN (European Organization for Nuclear Research)</ns2:Description>
+                <ns2:Logo height="60" width="60">data:image/png;base64,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</ns2:Logo>
+                <ns2:InformationURL xml:lang="en">https://cern.ch</ns2:InformationURL>
+                <ns2:PrivacyStatementURL xml:lang="en">https://home.cern/data-privacy-protection-statement</ns2:PrivacyStatementURL>
+            </ns2:UIInfo>
+        </ns0:Extensions>
+        <ns0:KeyDescriptor use="signing">
+            <ns3:KeyInfo>
+                <ns3:X509Data>
+                    <ns3:X509Certificate>MIID/zCCAmegAwIBAgIJAMOio0RzLcJ1MA0GCSqGSIb3DQEBCwUAMBYxFDASBgNVBAMTC2lkcC5jZXJuLmNoMB4XDTIzMDUwMjE0MzQyNloXDTMzMDYxODE0MzQyNlowFjEUMBIGA1UEAxMLaWRwLmNlcm4uY2gwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQDTX4H5fQeOSR9Tuv6pOapa/OK7FjZUl9AfCro+n+Q4eRxEcl3Wd6jKxWE2LSm53Bk3HUZWueLXfNfrPx/BhaP9HvziuwET9Bj2JQJOWzwDL6BcZHNByI4asROUdEPPTgqGHI+Z8RbqUVOOeOW0AjggxEOKjsnDFGbUgYz8YKbJ5mrbNVBvBdM8vh3383zAq9jzrMoV3aZ7NzJBMSrwm/dwx8uzzenGwhVEw4A6x/Lx3456ZWFKyZ2mnfhMF+4f/Gdh6B07T/7LrJTT6We1KZ+1TbmyfM6GiIUb0oF/WA+ZaxkXBOwzhbn+9Z/UpAiSNjfy01M0Vh83efXfZ/k1OBXVBW8YhYGJzg3DaYl1LWjw3ZARx0+/cM7rbLJjDwre2ZMbXei6AabbNWLPvJ1BDjWnyY6ZgPN7D21nGp4ic6ut5yiFobHRHAKQmvtWN7YyBBZfwn4wMj6kuf1CPkBj+c8053mNP6/gt+hxFbzo1ABZhAwWlBcp6iFcmVrYxWJCjv0CAwEAAaNQME4wLQYDVR0RBCYwJIILaWRwLmNlcm4uY2iGFWh0dHBzOi8vY2Vybi5jaC9sb2dpbjAdBgNVHQ4EFgQUx22EdJ2VN9t0HJ3GJotgyBj7RNgwDQYJKoZIhvcNAQELBQADggGBAGcFnemuX1H3qtO4psvMhd9Ng5HbGgJuBHWFRxS0yCiQ6we7fiqKurBLLb2s7wf6/cLxavsE/91h507sHDdlhJHd9G23ptryx6HzKXRzcmvSo755vDxxkaMydFM2LIDX76CFF+EwBFD/C2t70zmC/UjgCcRCHX+fIxM+EKVXC79p9aD25yqb0S+soY0pzsjWkumCSkQf58HnBF3op/3ActEosm2RFh4f4RNMo+eJHHyZwLLvzaKkqcSOXKSEgH2GesVHgKHogZRxxlT1Ci0zRWRMLMRX/l0kpKOh9/yotohMFLPBpsQbsrTDMuQH27LSQMtY7Q4wr+/IU/wKvoRg4bg3gZ/1Cx2/v5d9dDNhpq8AddOIM9hFFXPoWUygiqS7WFC+lGQnCP7qGtiXQ2/eo8NBFfSZwjmgf5oG2neudwt8huXNPdawAcA1QGzeaRrUX5NkP17uhe+zIFesG0McEYfOBM+wGiSBt8ABf9VZ59Awz928ycjCh0DzqCGr7Bh7Fw==</ns3:X509Certificate>
+                </ns3:X509Data>
+            </ns3:KeyInfo>
+        </ns0:KeyDescriptor>
+        <ns0:KeyDescriptor use="encryption">
+            <ns3:KeyInfo>
+                <ns3:X509Data>
+                    <ns3:X509Certificate>MIID/zCCAmegAwIBAgIJAMOio0RzLcJ1MA0GCSqGSIb3DQEBCwUAMBYxFDASBgNVBAMTC2lkcC5jZXJuLmNoMB4XDTIzMDUwMjE0MzQyNloXDTMzMDYxODE0MzQyNlowFjEUMBIGA1UEAxMLaWRwLmNlcm4uY2gwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQDTX4H5fQeOSR9Tuv6pOapa/OK7FjZUl9AfCro+n+Q4eRxEcl3Wd6jKxWE2LSm53Bk3HUZWueLXfNfrPx/BhaP9HvziuwET9Bj2JQJOWzwDL6BcZHNByI4asROUdEPPTgqGHI+Z8RbqUVOOeOW0AjggxEOKjsnDFGbUgYz8YKbJ5mrbNVBvBdM8vh3383zAq9jzrMoV3aZ7NzJBMSrwm/dwx8uzzenGwhVEw4A6x/Lx3456ZWFKyZ2mnfhMF+4f/Gdh6B07T/7LrJTT6We1KZ+1TbmyfM6GiIUb0oF/WA+ZaxkXBOwzhbn+9Z/UpAiSNjfy01M0Vh83efXfZ/k1OBXVBW8YhYGJzg3DaYl1LWjw3ZARx0+/cM7rbLJjDwre2ZMbXei6AabbNWLPvJ1BDjWnyY6ZgPN7D21nGp4ic6ut5yiFobHRHAKQmvtWN7YyBBZfwn4wMj6kuf1CPkBj+c8053mNP6/gt+hxFbzo1ABZhAwWlBcp6iFcmVrYxWJCjv0CAwEAAaNQME4wLQYDVR0RBCYwJIILaWRwLmNlcm4uY2iGFWh0dHBzOi8vY2Vybi5jaC9sb2dpbjAdBgNVHQ4EFgQUx22EdJ2VN9t0HJ3GJotgyBj7RNgwDQYJKoZIhvcNAQELBQADggGBAGcFnemuX1H3qtO4psvMhd9Ng5HbGgJuBHWFRxS0yCiQ6we7fiqKurBLLb2s7wf6/cLxavsE/91h507sHDdlhJHd9G23ptryx6HzKXRzcmvSo755vDxxkaMydFM2LIDX76CFF+EwBFD/C2t70zmC/UjgCcRCHX+fIxM+EKVXC79p9aD25yqb0S+soY0pzsjWkumCSkQf58HnBF3op/3ActEosm2RFh4f4RNMo+eJHHyZwLLvzaKkqcSOXKSEgH2GesVHgKHogZRxxlT1Ci0zRWRMLMRX/l0kpKOh9/yotohMFLPBpsQbsrTDMuQH27LSQMtY7Q4wr+/IU/wKvoRg4bg3gZ/1Cx2/v5d9dDNhpq8AddOIM9hFFXPoWUygiqS7WFC+lGQnCP7qGtiXQ2/eo8NBFfSZwjmgf5oG2neudwt8huXNPdawAcA1QGzeaRrUX5NkP17uhe+zIFesG0McEYfOBM+wGiSBt8ABf9VZ59Awz928ycjCh0DzqCGr7Bh7Fw==</ns3:X509Certificate>
+                </ns3:X509Data>
+            </ns3:KeyInfo>
+        </ns0:KeyDescriptor>
+        <ns0:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</ns0:NameIDFormat>
+        <ns0:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://edugain-idp-qa.web.cern.ch/saml2sp/sso/redirect"/>
+        <ns0:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://edugain-idp-qa.web.cern.ch/saml2sp/sso/post"/>
+    </ns0:IDPSSODescriptor>
+    <ns0:Organization>
+        <ns0:OrganizationName xml:lang="en">cern.ch</ns0:OrganizationName>
+        <ns0:OrganizationDisplayName xml:lang="en">CERN Identity Provider</ns0:OrganizationDisplayName>
+        <ns0:OrganizationURL xml:lang="en">https://www.cern.ch</ns0:OrganizationURL>
+    </ns0:Organization>
+    <ns0:ContactPerson contactType="technical">
+        <ns0:GivenName>CERN Service Desk</ns0:GivenName>
+        <ns0:EmailAddress>mailto:service-desk@cern.ch</ns0:EmailAddress>
+    </ns0:ContactPerson>
+    <ns0:ContactPerson contactType="administrative">
+        <ns0:GivenName>CERN Service Desk</ns0:GivenName>
+        <ns0:EmailAddress>mailto:service-desk@cern.ch</ns0:EmailAddress>
+    </ns0:ContactPerson>
+    <ns0:ContactPerson contactType="support">
+        <ns0:GivenName>CERN Service Desk</ns0:GivenName>
+        <ns0:EmailAddress>mailto:service-desk@cern.ch</ns0:EmailAddress>
+    </ns0:ContactPerson>
+</ns0:EntityDescriptor>

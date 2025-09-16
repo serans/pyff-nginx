@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: pyff-dev
+namePrefix: pyff-dev-
+
+resources:
+  - ../../base
+  - default.route.yaml
+
+configMapGenerator:
+  - name: static-xml
+    files:
+      - ./static-entities/sp_test.xml
+      - ./static-entities/satosa-idp-dev.xml
+      - ./static-entities/satosa-sp-dev.xml
+      - ./static-entities/edugain-idp-idp.xml
+    behavior: replace
+
+images:
+  - name: gitlab-registry.cern.ch/authzsvc/backends/docker-pyff
+    newName: gitlab-registry.cern.ch/authzsvc/backends/docker-pyff
+    newTag: 2.1.4-cern-1
