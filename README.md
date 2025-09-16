@@ -2,10 +2,6 @@
 
 ## Overview
 
-- Home cooked pyff docker image published in Gitlab registry, runs in 2 modes; filter or server
-- Main container runs pyff as a server (pyff.deploy.yaml)
-- 2 additional cron jobs fetch eduGAIN metadata, process it and publish it to a shared volume
-- All need write access to /var/run, so added as an emptyDir volume
 
 ## Update PyFF version
 
@@ -32,5 +28,5 @@ kubectl create job --from cj/pyff-dev-sps-importer sps
 Changelog:
 - 2025-09-15
     - `static` entities now renamed to `overrides`
-    - `pyffd.sh` 
+    - add green/blue deployment for nginx in `pyffd.sh`
 ---
