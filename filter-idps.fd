@@ -12,6 +12,6 @@
 - map:
   - publish:
       output: /tmp/pyff/downloads/
-      urlencode_filenames: false
+      urlencode_filenames: true
       hash_link: true
 - stats
