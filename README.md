@@ -26,6 +26,11 @@ kubectl create job --from cj/pyff-dev-sps-importer sps
 
 ---
 Changelog:
+- 2025-09-22
+    - fix wrong path in pipeline
+    - paths and pipelines hardcoded into pyffd.sh rather than passed in ENV variables (it was unused anyway)
+    - pyffd.sh now runs both pipelines before doing the blue/green switch
+    - merge sps and idps jobs into one
 - 2025-09-15
     - `static` entities now renamed to `overrides`
     - add green/blue deployment for nginx in `pyffd.sh`
