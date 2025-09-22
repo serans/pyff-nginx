@@ -1,7 +1,6 @@
 resources:
   - ./volume.pvc.yaml
-  - ./idps.job.yaml
-  - ./sps.job.yaml
+  - ./pipeline.job.yaml
   - ./alerts/oomkilled.alert.yaml
   - ./alerts/crashloop.alert.yaml
   - ./alerts/cronfailed.alert.yaml
@@ -13,7 +12,3 @@ configMapGenerator:
   - name: static-xml
     files:
       - ./static-entities/static1.xml
-  - name: idps-importer-env
-    env: idps-importer.env
-  - name: sps-importer-env
-    env: sps-importer.env
