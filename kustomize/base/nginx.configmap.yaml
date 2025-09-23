@@ -29,6 +29,9 @@ data:
           try_files /${filename}.xml $encoded_path =404;
         }
 
-        location = / { return 200 "pyff server running ok\n"; }
+        location = / { 
+          default_type text/plain;
+          return 200 "pyff server running ok\n";
+        }
       }
     }
