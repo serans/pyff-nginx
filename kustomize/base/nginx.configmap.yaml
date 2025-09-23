@@ -5,22 +5,28 @@ metadata:
 data:
   nginx.conf: |
     events {}
-    pid /var/cache/nginx/nginx.pid;
-    http {
-      include       /etc/nginx/mime.types;
-      default_type  application/octet-stream;
-      sendfile      on;
-      access_log    off;
+      pid /var/cache/nginx/nginx.pid;
+      http {
+        include       /etc/nginx/mime.types;
+        default_type  application/octet-stream;
+        sendfile      on;
+        access_log    off;
 
-      server {
-        listen 8080;
-        server_name _;
+        server {
+          listen 8080;
+          server_name _;
+          root /tmp/pyff/nginx-root/;
 
-        location ~ ^/entities/(.*)$ {
-          root /tmp/pyff/nginx-root;
-          try_files /$1.xml =404;
+          location ~ ^/entities/(.+)$ {
+            set $filename $1;
+
+            # Check if filename starts with {sha1}
+            set $encoded_path "";
+            if ($filename ~ ^(\{sha1\})(.*)$) {
+                set $encoded_path "/%7Bsha1%7D$2.xml";
+            }
+
+            try_files /${filename}.xml $encoded_path =404;
+          }
         }
-
-        location = / { return 200 "pyff server running ok\n"; }
       }
-    }
